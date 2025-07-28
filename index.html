@@ -18,23 +18,15 @@
     <h2>Join the Celebration</h2>
     <div class="video-container" id="videoContainer">
       <video
-        id="weddingStream"
+        id="videoPlayer"
         controls
         autoplay
         muted
         playsinline
-        style="display: none; width: 100%; height: 100%; object-fit: cover;"
       >
         <source src="https://b32f55b7ad1e.ap-south-1.playback.live-video.net/api/video/v1/ap-south-1.679504361987.channel.qPeidIV2jBZ2.m3u8" type="application/x-mpegURL" />
         Your browser does not support the video tag.
       </video>
-      <img
-        src="images/placeholder.jpg"
-        id="placeholder"
-        alt="Stream will be live on the wedding day"
-        style="width: 100%; height: 100%; object-fit: cover;"
-      />
-      <div class="stream-text">The live stream will be played on the wedding day</div>
     </div>
   </section>
 
@@ -42,6 +34,7 @@
     <p>Made with 💖 by sital</p>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
   <script src="script.js"></script>
 </body>
 </html>
