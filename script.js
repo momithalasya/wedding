@@ -1,30 +1,34 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const video = document.getElementById("weddingStream");
-  const placeholder = document.getElementById("placeholder");
-  const streamText = document.querySelector(".stream-text");
+const streamURL = "https://your-aws-link.m3u8"; // Replace with your real link
+const video = document.getElementById("videoPlayer");
+const placeholder = document.getElementById("placeholder");
 
-  function checkStreamAvailable() {
-    video.load();
-
-    const timeout = setTimeout(() => {
-      console.log("No stream yet, retrying in 10s...");
-      setTimeout(checkStreamAvailable, 10000);
-    }, 8000);
-
-    video.oncanplay = () => {
-      clearTimeout(timeout);
-      placeholder.style.display = "none";
-      streamText.style.display = "none";
-      video.style.display = "block";
-      video.play();
-    };
-
-    video.onerror = () => {
-      clearTimeout(timeout);
-      console.log("Error loading video. Retrying in 10s...");
-      setTimeout(checkStreamAvailable, 10000);
-    };
+// Check if stream is live
+async function checkStream(url) {
+  try {
+    const res = await fetch(url, { method: 'HEAD' });
+    return res.ok;
+  } catch (e) {
+    return false;
   }
+}
 
-  checkStreamAvailable();
+function startStream() {
+  placeholder.style.display = "none";
+  video.style.display = "block";
+
+  if (Hls.isSupported()) {
+    const hls = new Hls();
+    hls.loadSource(streamURL);
+    hls.attachMedia(video);
+  } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+    video.src = streamURL;
+  }
+}
+
+checkStream(streamURL).then((isLive) => {
+  if (isLive) {
+    startStream();
+  } else {
+    console.log("Stream not live yet.");
+  }
 });
