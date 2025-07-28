@@ -36,7 +36,16 @@ body {
   margin-top: 10px;
 }
 
-.photo-frame,
+.photo-frame {
+  width: 280px;
+  height: 350px;
+  border: 6px solid white;
+  border-radius: 20px;
+  overflow: hidden;
+  margin: 40px auto 0;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
 .video-frame {
   width: 280px;
   height: 280px;
@@ -70,7 +79,11 @@ body {
     font-size: 2rem;
   }
 
-  .photo-frame,
+  .photo-frame {
+    width: 200px;
+    height: 300px;
+  }
+
   .video-frame {
     width: 200px;
     height: 200px;
