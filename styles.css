@@ -15,7 +15,6 @@ body {
 /* Header Section */
 .parallax-header {
   height: 100vh;
-  position: relative;
   background-image: url('images/hall2.jpg');
   background-attachment: fixed;
   background-position: center;
@@ -24,6 +23,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
   text-align: center;
   overflow: hidden;
 }
@@ -40,13 +40,25 @@ body {
   background-position: inherit;
   background-repeat: inherit;
   background-size: inherit;
-  filter: blur(3px);
+  filter: blur(8px);
+  z-index: 0;
+}
+
+.parallax-header::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3); /* semi-transparent overlay for readability */
   z-index: 1;
 }
 
 .quote-content {
   position: relative;
   z-index: 2;
+  padding: 0 1rem;
 }
 
 .quote-content h1 {
@@ -54,14 +66,15 @@ body {
   color: rgb(1, 1, 82);
   margin-bottom: 1rem;
   animation: fadeIn 2s ease-in;
+  text-shadow: 1px 1px 4px rgba(255, 255, 255, 0.6);
 }
 
 .quote-content p {
   font-size: 1.5rem;
   color: black;
   animation: fadeIn 3s ease-in;
+  text-shadow: 1px 1px 4px rgba(255, 255, 255, 0.6);
 }
-
 
 /* Stream Section */
 .stream-section {
@@ -81,22 +94,14 @@ body {
   width: 90%;
   max-width: 800px;
   margin: auto;
-  padding-bottom: 56.25%; 
+  padding-bottom: 56.25%;
   height: 0;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
 
-.video-container iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: none;
-}
-
+.video-container video,
 .video-container img {
   position: absolute;
   top: 0;
@@ -104,9 +109,19 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border: none;
 }
 
+.stream-text {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-size: 1rem;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 0.5rem;
+  z-index: 3;
+}
 
 /* Footer */
 footer {
@@ -121,4 +136,19 @@ footer {
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(-20px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 600px) {
+  .quote-content h1 {
+    font-size: 2rem;
+  }
+
+  .quote-content p {
+    font-size: 1.2rem;
+  }
+
+  .stream-text {
+    font-size: 0.9rem;
+  }
 }
