@@ -37,14 +37,32 @@ body {
 }
 
 .photo-frame {
+  position: relative;
   width: 280px;
   height: 350px;
-  border: 6px solid white;
+  margin: 40px auto;
   border-radius: 20px;
   overflow: hidden;
-  margin: 40px auto 0;
-  box-shadow: 0 0 20px rgba(0,0,0,0.5);
 }
+
+.photo-frame img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.photo-frame img:first-child {
+  z-index: 2; /* frame image */
+  pointer-events: none;
+}
+
+.photo-frame img:last-child {
+  z-index: 1; /* couple photo */
+}
+
 
 .video-frame {
   width: 280px;
