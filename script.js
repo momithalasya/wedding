@@ -1,33 +1,30 @@
-// script.js
+document.addEventListener("DOMContentLoaded", function () {
+  const video = document.getElementById("weddingStream");
+  const placeholder = document.getElementById("placeholder");
+  const streamText = document.querySelector(".stream-text");
 
-async function checkStreamStatus() {
-  const playerDiv = document.getElementById("video-player");
-  const placeholderImg = document.getElementById("placeholder");
+  function checkStreamAvailable() {
+    video.load();
 
-  const videoUrl = "https://b32f55b7ad1e.ap-south-1.playback.live-video.net/api/video/v1/ap-south-1.679504361987.channel.qPeidIV2jBZ2.m3u8";
+    const timeout = setTimeout(() => {
+      console.log("No stream yet, retrying in 10s...");
+      setTimeout(checkStreamAvailable, 10000);
+    }, 8000);
 
-  try {
-    const response = await fetch(videoUrl, { method: "HEAD" });
+    video.oncanplay = () => {
+      clearTimeout(timeout);
+      placeholder.style.display = "none";
+      streamText.style.display = "none";
+      video.style.display = "block";
+      video.play();
+    };
 
-    if (response.ok) {
-      // Stream is live – replace placeholder with video
-      placeholderImg.style.display = "none";
-      playerDiv.innerHTML = `
-        <video controls autoplay muted style="width: 100%; border-radius: 20px;">
-          <source src="${videoUrl}" type="application/x-mpegURL" />
-          Your browser does not support the video tag.
-        </video>
-      `;
-    } else {
-      console.log("Stream not live yet.");
-    }
-  } catch (error) {
-    console.log("Error checking stream:", error);
+    video.onerror = () => {
+      clearTimeout(timeout);
+      console.log("Error loading video. Retrying in 10s...");
+      setTimeout(checkStreamAvailable, 10000);
+    };
   }
-}
 
-// Check every 10 seconds
-setInterval(checkStreamStatus, 10000);
-
-// Also check on page load
-checkStreamStatus();
+  checkStreamAvailable();
+});
