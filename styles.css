@@ -40,7 +40,7 @@ body {
   background-position: inherit;
   background-repeat: inherit;
   background-size: inherit;
-  filter: blur(8px);
+  filter: blur(3px);
   z-index: 0;
 }
 
@@ -63,7 +63,7 @@ body {
 
 .quote-content h1 {
   font-size: 3rem;
-  color: rgb(1, 1, 82);
+  color: white;
   margin-bottom: 1rem;
   animation: fadeIn 2s ease-in;
   text-shadow: 1px 1px 4px rgba(255, 255, 255, 0.6);
@@ -71,7 +71,7 @@ body {
 
 .quote-content p {
   font-size: 1.5rem;
-  color: black;
+  color: white;
   animation: fadeIn 3s ease-in;
   text-shadow: 1px 1px 4px rgba(255, 255, 255, 0.6);
 }
