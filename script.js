@@ -1,8 +1,7 @@
-const streamURL = "https://your-aws-link.m3u8"; // Replace with your real link
+const streamURL = "https://b32f55b7ad1e.ap-south-1.playback.live-video.net/api/video/v1/ap-south-1.679504361987.channel.qPeidIV2jBZ2.m3u8";
 const video = document.getElementById("videoPlayer");
-const placeholder = document.getElementById("placeholder");
 
-// Check if stream is live
+// Optional: show console message if stream is unreachable
 async function checkStream(url) {
   try {
     const res = await fetch(url, { method: 'HEAD' });
@@ -12,10 +11,7 @@ async function checkStream(url) {
   }
 }
 
-function startStream() {
-  placeholder.style.display = "none";
-  video.style.display = "block";
-
+function playStream() {
   if (Hls.isSupported()) {
     const hls = new Hls();
     hls.loadSource(streamURL);
@@ -25,10 +21,12 @@ function startStream() {
   }
 }
 
+// Always try to load stream
 checkStream(streamURL).then((isLive) => {
   if (isLive) {
-    startStream();
+    playStream();
   } else {
-    console.log("Stream not live yet.");
+    console.log("Stream is not live yet.");
+    playStream(); // Still try to load so player appears
   }
 });
