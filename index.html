@@ -9,50 +9,36 @@
 <body>
   <header class="parallax-header">
     <div class="quote-content">
-      <h1>"Two souls, one heart♥"</h1>
+      <h1>"Two souls, one heart ♥"</h1>
       <p>— Together is a beautiful place to be —</p>
+    </div>
+    <div class="photo-frame">
+      <img src="images/couple.jpg" alt="Couple Photo" />
     </div>
   </header>
 
   <section class="stream-section">
     <h2>Join the Celebration</h2>
-    <div class="video-container">
-      <video
-        id="weddingStream"
-        controls
-        autoplay
-        muted
-        playsinline
-        style="width: 100%; height: 100%; object-fit: cover; background-color: black;"
-      >
-        <source src="https://b32f55b7ad1e.ap-south-1.playback.live-video.net/api/video/v1/ap-south-1.679504361987.channel.qPeidIV2jBZ2.m3u8" type="application/x-mpegURL" />
-        Your browser does not support the video tag.
-      </video>
+    <div class="video-frame">
+      <video id="weddingStream" controls autoplay muted playsinline></video>
     </div>
   </section>
 
-  <footer>
-    <p>Reception:    Muhurtham:</p>
-  </footer>
-
+  <!-- Include hls.js -->
   <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
-<script>
-  const video = document.getElementById('weddingStream');
-  const videoSrc = 'https://b32f55b7ad1e.ap-south-1.playback.live-video.net/api/video/v1/ap-south-1.679504361987.channel.qPeidIV2jBZ2.m3u8';
+  <script>
+    const video = document.getElementById('weddingStream');
+    const videoSrc = 'https://b32f55b7ad1e.ap-south-1.playback.live-video.net/api/video/v1/ap-south-1.679504361987.channel.qPeidIV2jBZ2.m3u8';
 
-  if (Hls.isSupported()) {
-    const hls = new Hls();
-    hls.loadSource(videoSrc);
-    hls.attachMedia(video);
-    hls.on(Hls.Events.MANIFEST_PARSED, function () {
-      video.play();
-    });
-  } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-    video.src = videoSrc;
-    video.addEventListener('loadedmetadata', function () {
-      video.play();
-    });
-  }
-</script>
+    if (Hls.isSupported()) {
+      const hls = new Hls();
+      hls.loadSource(videoSrc);
+      hls.attachMedia(video);
+    } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+      video.src = videoSrc;
+    } else {
+      console.error('HLS not supported in this browser.');
+    }
+  </script>
 </body>
 </html>
