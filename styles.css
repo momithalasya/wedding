@@ -67,11 +67,14 @@ body {
 .stream-section {
   padding: 40px 20px;
   text-align: center;
+  background-color: lavenderblush; /* light pink background */
 }
 
 .stream-section h2 {
   font-size: 2rem;
   margin-bottom: 20px;
+  color: brown; /* heading color */
+  
 }
 
 @media (max-width: 768px) {
@@ -89,3 +92,13 @@ body {
     height: 200px;
   }
 }
+footer {
+  background-color: white;
+  color: #555;
+  text-align: center;
+  padding: 20px 10px;
+  font-size: 0.9rem;
+  border-top: 1px solid #ddd;
+  margin-top: 40px;
+}
+
