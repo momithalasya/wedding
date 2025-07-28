@@ -1,0 +1,124 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Georgia', serif;
+  background: #fffaf5;
+  color: #5c4a4a;
+  scroll-behavior: smooth;
+}
+
+/* Header Section */
+.parallax-header {
+  height: 100vh;
+  position: relative;
+  background-image: url('images/hall2.jpg');
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.parallax-header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: inherit;
+  background-attachment: inherit;
+  background-position: inherit;
+  background-repeat: inherit;
+  background-size: inherit;
+  filter: blur(3px);
+  z-index: 1;
+}
+
+.quote-content {
+  position: relative;
+  z-index: 2;
+}
+
+.quote-content h1 {
+  font-size: 3rem;
+  color: rgb(1, 1, 82);
+  margin-bottom: 1rem;
+  animation: fadeIn 2s ease-in;
+}
+
+.quote-content p {
+  font-size: 1.5rem;
+  color: black;
+  animation: fadeIn 3s ease-in;
+}
+
+
+/* Stream Section */
+.stream-section {
+  padding: 4rem 2rem;
+  background: #fff2f2;
+  text-align: center;
+}
+
+.stream-section h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #8a3e3e;
+}
+
+.video-container {
+  position: relative;
+  width: 90%;
+  max-width: 800px;
+  margin: auto;
+  padding-bottom: 56.25%; 
+  height: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.video-container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: none;
+}
+
+
+/* Footer */
+footer {
+  background: #f5e6e6;
+  padding: 1rem;
+  text-align: center;
+  font-size: 1rem;
+  color: #6b4e4e;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
