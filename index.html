@@ -21,28 +21,19 @@
     <h2>Join the Celebration</h2>
     <h3>Hima Bindhu weds Jaya Prakash</h3>
     <div class="video-frame">
-      <video id="weddingStream" controls autoplay muted playsinline></video>
+      <iframe 
+        width="100%" 
+        height="100%" 
+        src="https://www.youtube.com/embed/i3LXp3W4nq4?autoplay=1"
+        title="Wedding Live Stream" 
+        frameborder="0" 
+        allow="autoplay; encrypted-media" 
+        allowfullscreen>
+      </iframe>
     </div>
   </section>
   <footer>
     <p>Reception and Dinner : 30-07-2025, Wednesday, 7.00 PM Onwards<br>Subha Muhurtham : 31-07-2025, Thursday, Between 3.30 to 4.30 AM in Midhuna Lagnam</p>
   </footer>
 
-  <!-- Include hls.js -->
-  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
-  <script>
-    const video = document.getElementById('weddingStream');
-    const videoSrc = 'https://youtube.com/live/i3LXp3W4nq4?feature=share';
-
-    if (Hls.isSupported()) {
-      const hls = new Hls();
-      hls.loadSource(videoSrc);
-      hls.attachMedia(video);
-    } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-      video.src = videoSrc;
-    } else {
-      console.error('HLS not supported in this browser.');
-    }
-  </script>
-</body>
-</html>
+  
