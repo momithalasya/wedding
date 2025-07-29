@@ -52,8 +52,10 @@ body {
 }
 
 .quote-content h1 {
+  font-family: 'SeptemberDisplay', 'Dancing Script', cursive;
   font-size: 3rem;
   margin: 0;
+  
 }
 
 .quote-content p {
