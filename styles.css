@@ -56,13 +56,14 @@ body {
   position: relative;
   width: 280px;
   height: 350px;
-  margin: 40px auto;
+  /*margin: 40px auto;*/
+  border: 5px solid #210d02;
   border-radius: 20px;
   overflow: hidden;
-  background-color: #210d02; /* Changed to brown */
+ /* background-color: #210d02; Changed to brown */
   box-shadow: 0 0 15px rgba(0,0,0,0.3);
-  padding: 3px;
-  box-sizing: border-box;
+  /*padding: 3px;
+  box-sizing: border-box;*/
   transition: transform 0.3s ease-in-out; /* Smooth transition for hover effect */
 }
 
@@ -116,8 +117,8 @@ body {
   .photo-frame {
     width: 200px;
     height: 300px;
-    padding: 4px; /* Ensure padding is applied consistently here too */
-    box-sizing: border-box;
+    /*padding: 4px;  Ensure padding is applied consistently here too 
+    box-sizing: border-box;*/
   }
 
   .video-frame {
