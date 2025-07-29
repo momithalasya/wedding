@@ -126,6 +126,20 @@ body {
   margin-bottom: 20px; /* Example, adjust as needed */
   color: brown; /* Example, adjust as needed for better contrast with the font */
 }
+footer {
+  background-color: #fdf5f0; /* soft background to match theme */
+  color: brown;
+  text-align: center;
+  padding: 20px 10px;
+  font-family: 'SeptemberDisplay', serif; /* Uses custom font if loaded */
+  font-size: 1rem;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+}
+
+footer p {
+  margin: 0;
+  line-height: 1.5;
+}
 
 
 @media (max-width: 768px) {
