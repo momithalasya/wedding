@@ -59,9 +59,9 @@ body {
   margin: 40px auto;
   border-radius: 20px;
   overflow: hidden;
-  background-color: brown; /* Changed to brown */
+  background-color: #210d02; /* Changed to brown */
   box-shadow: 0 0 15px rgba(0,0,0,0.3);
-  border: 1px solid brown; /* 1px border on all sides */
+  border: 1px solid #210d02; /* 1px border on all sides */
   transition: transform 0.3s ease-in-out; /* Smooth transition for hover effect */
 }
 
@@ -72,8 +72,7 @@ body {
 /* Couple photo */
 .photo-frame img {
   position: absolute;
-  top: 10px; /* slight inset */
-  left: 10px;
+  inset:4px;
   width: calc(100% - 20px);
   height: calc(100% - 20px);
   object-fit: cover;
