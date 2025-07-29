@@ -153,13 +153,12 @@ footer p {
 
   .photo-frame {
     width: 200px;
-    height: 300px;
+    height: auto;
     /*padding: 4px;  Ensure padding is applied consistently here too 
     box-sizing: border-box;*/
   }
 
   .video-frame {
-    width: 200px;
-    height: 200px; /* Assuming this was the intended value */
+    width: 95%; /* Assuming this was the intended value */
   }
 }
