@@ -5,6 +5,16 @@ body {
   color: #333;
 }
 
+/* At the top of your styles.css file */
+@font-face {
+  font-family: 'SeptemberDisplay'; /* Choose a unique name for your web font */
+  src: url('fonts/SeptemberDisplay.woff2') format('woff2'), /* Path to your woff2 file */
+       url('fonts/SeptemberDisplay.woff') format('woff'); /* Path to your woff file */
+  font-weight: normal; /* Adjust based on the font's weight if it's not normal */
+  font-style: normal;  /* Adjust based on the font's style (e.g., italic) */
+  font-display: swap; /* Recommended for better user experience while loading */
+}
+
 /* Parallax background */
 .parallax-header {
   background-image: url('images/hall2.jpg'); /* Replace with actual image */
@@ -108,6 +118,15 @@ body {
   margin-bottom: 20px;
   color: brown;
 }
+
+/* In your styles.css file, within the .stream-section h2 rule */
+.stream-section h3 { /* Target the h3 specifically within the stream section */
+  font-family: 'SeptemberDisplay', 'Dancing Script', cursive; /* Use your custom font, then fallback options */
+  font-size: 1.6em; /* Adjust as needed */
+  margin-bottom: 20px; /* Example, adjust as needed */
+  color: brown; /* Example, adjust as needed for better contrast with the font */
+}
+
 
 @media (max-width: 768px) {
   .quote-content h1 {
