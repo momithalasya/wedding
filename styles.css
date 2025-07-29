@@ -7,25 +7,25 @@ body {
 
 /* At the top of your styles.css file */
 @font-face {
-  font-family: 'SeptemberDisplay'; /* Choose a unique name for your web font */
-  src: url('fonts/SeptemberDisplay.woff2') format('woff2'), /* Path to your woff2 file */
-       url('fonts/SeptemberDisplay.woff') format('woff'); /* Path to your woff file */
-  font-weight: normal; /* Adjust based on the font's weight if it's not normal */
-  font-style: normal;  /* Adjust based on the font's style (e.g., italic) */
-  font-display: swap; /* Recommended for better user experience while loading */
+  font-family: 'SeptemberDisplay';
+  src: url('fonts/SeptemberDisplay.woff2') format('woff2'),
+       url('fonts/SeptemberDisplay.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
 
 /* Parallax background */
 .parallax-header {
-  background-image: url('images/hall2.jpg'); /* Replace with actual image */
+  background-image: url('images/hall2.jpg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
   height: 100vh;
   position: relative;
   display: flex;
-  align-items: center; /* Center horizontally */
-  justify-content: center; /* Center vertically */
+  align-items: center;
+  justify-content: center;
   flex-direction: column;
   padding: 40px;
   text-align: center;
@@ -48,14 +48,13 @@ body {
   color: white;
   text-shadow: 2px 2px 5px #000;
   animation: dropIn 1s ease-out;
-  text-align: center; /* Ensure text inside is centered */
+  text-align: center;
 }
 
 .quote-content h1 {
   font-family: 'SeptemberDisplay', 'Dancing Script', cursive;
   font-size: 4rem;
   margin: 0;
-  
 }
 
 .quote-content p {
@@ -72,30 +71,28 @@ body {
   border: 5px solid #210d02;
   border-radius: 20px;
   overflow: hidden;
- /* background-color: #210d02; Changed to brown */
   box-shadow: 0 0 15px rgba(0,0,0,0.3);
-  /*padding: 3px;
-  box-sizing: border-box;*/
-  transition: transform 0.3s ease-in-out; /* Smooth transition for hover effect */
+  transition: transform 0.3s ease-in-out;
 }
 
 .photo-frame:hover {
-  transform: scale(1.1); /* Increases the size by 10% on hover */
+  transform: scale(1.1);
 }
 
 /* Couple photo */
 .photo-frame img {
-  width: 100%; /* The image will take up 100% of the space *inside the padding* */
+  width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 10px;
-  z-index: 1
+  z-index: 1;
 }
 
+/* Stream video container */
 .video-frame {
   width: 90%;
   max-width: 800px;
-  aspect-ratio: 16 / 9; /* Maintains 16:9 ratio */
+  aspect-ratio: 16 / 9;
   border: 6px solid white;
   border-radius: 20px;
   overflow: hidden;
@@ -104,14 +101,13 @@ body {
   background-color: black;
 }
 
-.video-frame video {
+/* Updated to style the YouTube iframe instead of <video> */
+.video-frame iframe {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  display: block;
   border: none;
+  display: block;
 }
-
 
 .stream-section {
   padding: 40px 20px;
@@ -125,19 +121,19 @@ body {
   color: brown;
 }
 
-/* In your styles.css file, within the .stream-section h2 rule */
-.stream-section h3 { /* Target the h3 specifically within the stream section */
-  font-family: 'SeptemberDisplay', 'Dancing Script', cursive; /* Use your custom font, then fallback options */
-  font-size: 1.6em; /* Adjust as needed */
-  margin-bottom: 20px; /* Example, adjust as needed */
-  color: brown; /* Example, adjust as needed for better contrast with the font */
+.stream-section h3 {
+  font-family: 'SeptemberDisplay', 'Dancing Script', cursive;
+  font-size: 1.6em;
+  margin-bottom: 20px;
+  color: brown;
 }
+
 footer {
-  background-color: #fdf5f0; /* soft background to match theme */
+  background-color: #fdf5f0;
   color: brown;
   text-align: center;
   padding: 20px 10px;
-  font-family: 'SeptemberDisplay', serif; /* Uses custom font if loaded */
+  font-family: 'SeptemberDisplay', serif;
   font-size: 1rem;
   box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
 }
@@ -147,7 +143,6 @@ footer p {
   line-height: 1.5;
 }
 
-
 @media (max-width: 768px) {
   .quote-content h1 {
     font-size: 2rem;
@@ -156,11 +151,9 @@ footer p {
   .photo-frame {
     width: 200px;
     height: auto;
-    /*padding: 4px;  Ensure padding is applied consistently here too 
-    box-sizing: border-box;*/
   }
 
   .video-frame {
-    width: 95%; /* Assuming this was the intended value */
+    width: 95%;
   }
 }
