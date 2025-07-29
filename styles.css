@@ -5,6 +5,7 @@ body {
   color: #333;
 }
 
+/* Parallax background */
 .parallax-header {
   background-image: url('images/hall2.jpg'); /* Replace with actual image */
   background-size: cover;
@@ -20,10 +21,23 @@ body {
   text-align: center;
 }
 
+/* Dropping animation */
+@keyframes dropIn {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
 .quote-content {
   margin-top: 20px;
   color: white;
   text-shadow: 2px 2px 5px #000;
+  animation: dropIn 1s ease-out;
 }
 
 .quote-content h1 {
@@ -36,6 +50,7 @@ body {
   margin-top: 10px;
 }
 
+/* Solid gold photo frame */
 .photo-frame {
   position: relative;
   width: 280px;
@@ -43,26 +58,21 @@ body {
   margin: 40px auto;
   border-radius: 20px;
   overflow: hidden;
+  background-color: gold; /* Solid gold background */
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
 }
 
+/* Couple photo */
 .photo-frame img {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  top: 10px; /* slight inset */
+  left: 10px;
+  width: calc(100% - 20px);
+  height: calc(100% - 20px);
   object-fit: cover;
+  border-radius: 10px;
+  z-index: 1;
 }
-
-.photo-frame img:first-child {
-  z-index: 2; /* frame image */
-  pointer-events: none;
-}
-
-.photo-frame img:last-child {
-  z-index: 1; /* couple photo */
-}
-
 
 .video-frame {
   width: 280px;
@@ -85,14 +95,13 @@ body {
 .stream-section {
   padding: 40px 20px;
   text-align: center;
-  background-color: lavenderblush; /* light pink background */
+  background-color: lavenderblush;
 }
 
 .stream-section h2 {
   font-size: 2rem;
   margin-bottom: 20px;
-  color: brown; /* heading color */
-  
+  color: brown;
 }
 
 @media (max-width: 768px) {
@@ -110,6 +119,7 @@ body {
     height: 200px;
   }
 }
+
 footer {
   background-color: white;
   color: #555;
@@ -119,4 +129,3 @@ footer {
   border-top: 1px solid #ddd;
   margin-top: 40px;
 }
-
