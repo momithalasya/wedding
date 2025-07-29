@@ -84,7 +84,12 @@ body {
   box-shadow: 0 0 20px rgba(0,0,0,0.5);
 }
 
-.photo-frame img,
+.photo-frame img{
+  width: 90%;
+  height: 90%;
+  object-fit: cover;
+  background-color:gold;
+}
 .video-frame video {
   width: 100%;
   height: 100%;
